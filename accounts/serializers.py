@@ -61,5 +61,13 @@ class LoginSerializer(serializers.ModelSerializer):
             'access_token': str(user_tokens.get('access')),
             'refresh_token': str(user_tokens.get('refresh'))
         }
+        
+class VerifyEmailSerializer(serializers.Serializer):
+    otp = serializers.CharField(max_length=6)
+
+    def validate_otp(self, value):
+        if not value.isdigit():
+            raise serializers.ValidationError("OTP must be numeric")
+        return value
      
     
