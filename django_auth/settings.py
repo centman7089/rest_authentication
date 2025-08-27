@@ -18,7 +18,7 @@ DEBUG = env("DEBUG")
 SECRET_KEY = env("SECRET_KEY")
 
 # Hosts
-ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=["https://jang-api.onrender.com","localhost", "127.0.0.1"])
+ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=["jang-api.onrender.com","localhost", "127.0.0.1"])
 
 # Email
 EMAIL_HOST = env("EMAIL_HOST", default="sandbox.smtp.mailtrap.io")
